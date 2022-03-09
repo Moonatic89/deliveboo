@@ -1,0 +1,99 @@
+@use "bootstrap";
+
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Nunito");
+
+// Variables
+@import "variables";
+
+.scroll {
+  max-height: 100vh;
+  overflow: auto;
+
+  .myCard {
+    height: 400px;
+
+    .cardR {
+      width: 30rem;
+    }
+  }
+}
+
+@media screen and (max-width: 1305px) {
+  * {
+    transition: all 0.4s ease;
+  }
+
+  .respCard {
+    .row {
+      position: relative;
+      left: 15px;
+
+    }
+  }
+}
+
+
+@media screen and (max-width: 1135px) {
+  .respCard {
+    padding: 0.5rem 0.5rem;
+
+    .row {
+      position: relative;
+      left: 15px;
+
+    }
+  }
+    
+    .infoR{
+      h5 {
+      font-size: 0.9rem !important;
+
+      }
+      text-align: center;
+      font-size: 0.8em !important;
+      
+    }
+    .btns {
+        font-size: 0.7em !important;
+
+      *{
+
+        font-size: 0.9em !important;
+      }
+    }
+}
+
+@media screen and (max-width: 768px) {
+  .btns {
+    * {
+      margin: 0.3rem 0;
+
+    }
+  }
+}
+
+@media screen and (max-width: 535px) {
+  .cardR {
+    width: 20rem;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .respCard {
+    padding: 0.5rem 0.5rem;
+  }
+  .btns {
+        
+      *{
+
+        font-size: 1.2em !important;
+      }
+    }
+}
+
+@media screen and (max-width: 375px) {
+  .centered {
+    text-align: center;
+  }
+}

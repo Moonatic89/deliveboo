@@ -1,0 +1,13 @@
+@use "bootstrap";
+
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Nunito");
+
+// Variables
+@import "variables";
+
+.scroll {
+  max-height: 100vh;
+  overflow: auto;
+  color: white;
+}

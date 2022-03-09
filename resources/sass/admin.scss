@@ -1,0 +1,297 @@
+@use "bootstrap";
+
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Nunito");
+
+// Variables
+@import "variables";
+
+.sidebar {
+    height: 100vh;
+    background-color: $secondary_color !important;
+
+    * {
+        color: black !important;
+    }
+}
+
+.container.position-absolute.pt-5 {
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, 0);
+}
+
+
+
+.scroll {
+    max-height: 100vh;
+    overflow-y: auto;
+
+    .titleBox {
+        background-color: $secondary-color;
+        box-shadow: -20px 15px 0px 0px rgba(59, 59, 59, 1);
+        -webkit-box-shadow: -30px 15px 0px 0px rgba(59, 59, 59, 1);
+        -moz-box-shadow: -30px 15px 0px 0px rgba(59, 59, 59, 1);
+        font-size: 3.5rem;
+        padding: 0.5rem 1rem;
+    }
+
+
+    .card-front__heading {
+      font-family: "Tangerine", cursive;
+    font-size: 4rem;
+    width: 240px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    }
+    .card {
+        background-color: transparent;
+        border: 0 !important;
+
+        .image {
+            width: 100%;
+            height: 250px;
+        }
+
+        .restaurantTitleIndex {
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, 0);
+            width: 90%;
+            text-align: center;
+
+            .card-title {
+
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+        }
+
+        .actionRestaurantindex {
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%, 0%);
+        }
+    }
+}
+
+
+
+
+
+/* CARD PROVA */
+
+/* Typography =======================*/
+
+/* Headings */
+
+/* Main heading for card's front cover */
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Main heading for inside page */
+.inside-page__heading {
+    padding-bottom: 1rem;
+    width: 100%;
+}
+
+/* Mixed */
+
+/* For both inside page's main heading and 'view me' text on card front cover */
+.inside-page__heading,
+.card-front__text-view {
+    font-size: 1.2rem;
+    font-weight: 800;
+
+    a {
+        color: $secondary_color;
+        text-decoration: none;
+
+        &:hover {
+            color: #eab405;
+            transition: 0.3 ease-in-out;
+        }
+    }
+
+}
+
+.inside-page__heading--city,
+.card-front__text-view--city {
+  color: $secondary_color;
+
+}
+
+/* Front cover */
+
+.card-front__tp {
+  color: $secondary_color;
+}
+
+/* Back cover */
+
+/* For inside page's body text */
+.inside-page__text {
+    color: #333;
+}
+
+/* Container to hold all cards in one place */
+.card-area {
+    align-items: center;
+    display: flex;
+    flex-wrap: nowrap;
+    height: 100%;
+    justify-content: space-evenly;
+}
+
+/* Card ============================================*/
+
+/* Area to hold an individual card */
+.card-section {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    width: 100%;
+}
+
+/* A container to hold the flip card and the inside page */
+.card {
+    background-color: rgba(0, 0, 0, .05);
+    height: 15rem;
+    position: relative;
+    transition: width 1s ease;
+    width: 15rem;
+}
+
+/* Flip card - covering both the front and inside front page */
+
+/* An outer container to hold the flip card. This excludes the inside page */
+.flip-card {
+    height: 15rem;
+    perspective: 80rem;
+    position: absolute;
+    right: 0;
+    transition: width 1s ease;
+    visibility: hidden;
+    width: 15rem;
+    z-index: 100;
+}
+
+/* The outer container's visibility is set to hidden. This is to make everything within the container NOT set to hidden  */
+/* This is done so content in the inside page can be selected */
+.flip-card>* {
+    visibility: visible;
+}
+
+/* An inner container to hold the flip card. This excludes the inside page */
+.flip-card__container {
+    height: 100%;
+    position: absolute;
+    right: 0;
+    transform-origin: left;
+    transform-style: preserve-3d;
+    transition: all 1s ease;
+    width: 100%;
+}
+
+.card-front,
+.card-back {
+    backface-visibility: hidden;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+/* Styling for the front side of the flip card */
+
+/* container for the front side */
+.card-front {
+    background-color: $secondary_color;
+    height: 15rem;
+    width: 15rem;
+}
+
+/* Front side's top section */
+.card-front__tp {
+    align-items: center;
+
+    display: flex;
+    flex-direction: column;
+    height: 12rem;
+    justify-content: center;
+
+}
+
+.card-front__tp--city {
+
+      background-image: url('https://wallpaperaccess.com/full/896724.jpg');
+
+}
+
+/* Front card's bottom section */
+.card-front__bt {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+/* Styling for the back side of the flip card */
+
+.card-back {
+    background-color: gray;
+    transform: rotateY(180deg);
+}
+
+/* Specifically targeting the <video> element */
+.video__container {
+    height: auto;
+    min-height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Inside page */
+
+.inside-page {
+    background-color: #fafbfa;
+    position: absolute;
+    right: 0;
+    transition: width 1s ease;
+    width: 15rem;
+    height: 100%;
+    z-index: 1;
+}
+
+.inside-page__container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    text-align: center;
+    width: 100%;
+}
+
+/* Functionality ====================================*/
+
+/* This is to keep the card centered (within its container) when opened */
+.card:hover {
+    width: 25rem;
+}
+
+/* When the card is hovered, the flip card container will rotate */
+.card:hover .flip-card__container {
+    transform: rotateY(-180deg);
+}
